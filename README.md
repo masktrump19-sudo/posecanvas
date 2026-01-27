@@ -5,7 +5,7 @@
 
 <!-- 徽章区域 -->
 [![SYSU](https://img.shields.io/badge/Institution-SYSU-005826?style=flat-square&logo=cplusplus)](https://www.sysu.edu.cn/)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%20Weights-FFD21E?style=flat-square&logo=huggingface)](https://huggingface.co/masktrump19-sudo)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%20Weights-FFD21E?style=flat-square&logo=huggingface)](https://huggingface.co/Huangyongqing/flux-inference-weights)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Gradio](https://img.shields.io/badge/Demo-Gradio-FB7A24?style=flat-square&logo=gradio&logoColor=white)](https://gradio.app/)
 
@@ -28,16 +28,15 @@ This repository contains the inference pipeline for the **[Flux](https://github.
 
 Due to GitHub's file size limits, the model weights (`.safetensors`) are hosted on my **Hugging Face** repository.
 
-👉 **[Click here to Download Weights from Hugging Face](https://huggingface.co/masktrump19-sudo)** 
-*(Please replace this link with your actual HF repo URL)*
+👉 **[Click here to Download Weights from Hugging Face](https://huggingface.co/Huangyongqing/flux-inference-weights)** 
 
 ### Setup Instructions
 After downloading, please organize the files in the `checkpoints/` directory as follows:
 
 ```text
 checkpoints/
-├── flux1-dev.safetensors   <-- Main Model
-└── ae.safetensors          <-- AutoEncoder
+├── flux1-dev.safetensors   <-- Main Model (23.8GB)
+└── ae.safetensors          <-- AutoEncoder (335MB)
 ```
 
 ## 🚀 Getting Started
