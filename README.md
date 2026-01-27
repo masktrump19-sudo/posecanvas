@@ -3,9 +3,9 @@
 # Flux Inference Project
 ### 🎓 SYSU Computer Vision Coursework
 
-<!-- 徽章区域 -->
 [![SYSU](https://img.shields.io/badge/Institution-SYSU-005826?style=flat-square&logo=cplusplus)](https://www.sysu.edu.cn/)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%20Weights-FFD21E?style=flat-square&logo=huggingface)](https://huggingface.co/Huangyongqing/flux-inference-weights)
+[![Hugging Face Weights](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%20Weights-FFD21E?style=flat-square&logo=huggingface)](https://huggingface.co/Huangyongqing/flux-inference-weights)
+[![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-FFD21E?style=flat-square&logo=huggingface)](https://huggingface.co/datasets/Huangyongqing/FLUX-SDXL-ALL-DATASET)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Gradio](https://img.shields.io/badge/Demo-Gradio-FB7A24?style=flat-square&logo=gradio&logoColor=white)](https://gradio.app/)
 
@@ -24,14 +24,18 @@ This repository contains the inference pipeline for the **[Flux](https://github.
 
 > **✨ Key Feature:** The project supports both **Gradio** (Web UI) and **Streamlit** (Dashboard) for flexible demonstration.
 
-## 📥 Model Weights (Hugging Face)
+## 📥 Model Weights & Dataset
 
-Due to GitHub's file size limits, the model weights (`.safetensors`) are hosted on my **Hugging Face** repository.
+### 1. Model Weights
+Due to GitHub's file size limits, the model weights (`.safetensors`) are hosted on my **Hugging Face Model** repository.
 
-👉 **[Click here to Download Weights from Hugging Face](https://huggingface.co/Huangyongqing/flux-inference-weights)** 
+👉 **[Download Weights here](https://huggingface.co/Huangyongqing/flux-inference-weights)** ### 2. Dataset (New!)
+The full training and validation datasets (FLUX & SDXL) are hosted on my **Hugging Face Dataset** repository.
+
+👉 **[Access Dataset here](https://huggingface.co/datasets/Huangyongqing/FLUX-SDXL-ALL-DATASET)** ---
 
 ### Setup Instructions
-After downloading, please organize the files in the `checkpoints/` directory as follows:
+After downloading weights, please organize the files in the `checkpoints/` directory as follows:
 
 ```text
 checkpoints/
