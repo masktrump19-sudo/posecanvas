@@ -1,0 +1,60 @@
+# Flux Model Training Configuration
+
+# 实验名称
+experiment_name: "flux_skeleton_finetune_v1"
+output_dir: "./outputs/checkpoints"
+log_dir: "./outputs/logs"
+
+# 模型参数
+model:
+  type: "flux-dev" # or "flux-schnell"
+  pretrained_path: "black-forest-labs/FLUX.1-dev" # 本地路径或HuggingFace ID
+  resume_from_checkpoint: null # 检查点路径
+  
+  # Adapter参数
+  adapter:
+    in_channels: 3
+    hidden_size: 3072 # Must match Flux hidden size
+    downsample_factor: 8 # Match VAE down sampling
+    
+  # 损失函数配置
+  loss:
+    skeleton_lambda: 5.0
+    skeleton_loss_weight: 0.1
+    diffusion_loss_type: "mse"
+
+# 数据集参数
+data:
+  dataset_name: "anime_pose"
+  data_root: "./data/raw"
+  train_batch_size: 4
+  val_batch_size: 1
+  num_workers: 4
+  image_size: 1024 # [1024, 1024]
+  
+  # 预处理
+  skeleton:
+    use_neck: true
+    confidence_threshold: 0.3
+
+# 训练参数
+train:
+  num_epochs: 10
+  learning_rate: 1.0e-5 # Adapter usually needs higher LR, but CrossAttn injection might need care
+  weight_decay: 0.01
+  gradient_accumulation_steps: 4
+  max_grad_norm: 1.0
+  save_interval: 1000 # steps
+  log_interval: 10 # steps
+  mixed_precision: "fp16" # "no", "fp16", "bf16"
+  
+  # 优化器
+  optimizer:
+    type: "adamw"
+    betas: [0.9, 0.999]
+    eps: 1.0e-8
+
+# 系统
+seed: 42
+device: "cuda"
+debug: false
