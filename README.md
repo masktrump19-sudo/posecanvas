@@ -29,7 +29,9 @@ This repository contains the inference pipeline for the **[Flux](https://github.
 ### 1. Model Weights
 Due to GitHub's file size limits, the model weights (`.safetensors`) are hosted on my **Hugging Face Model** repository.
 
-👉 **[Download Weights here](https://huggingface.co/Huangyongqing/flux-inference-weights)** ### 2. Dataset (New!)
+👉 **[Download Weights here](https://huggingface.co/Huangyongqing/flux-inference-weights)** 
+
+### 2. Dataset (New!)
 The full training and validation datasets (FLUX & SDXL) are hosted on my **Hugging Face Dataset** repository.
 
 👉 **[Access Dataset here](https://huggingface.co/datasets/Huangyongqing/FLUX-SDXL-ALL-DATASET)** ---
