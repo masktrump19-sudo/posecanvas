@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">PoseCanvas research design and current integration boundary</title>
+<desc id="desc">Pose and supplied prop outlines are encoded into adapter feature tokens. The proposed connection to the FLUX backbone is dashed because this integration is not yet implemented. Text and noise feed the base FLUX model, followed by image decoding. A separate training branch uses a skeleton mask for weighted mean squared error.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#506475"/></marker><marker id="pending" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#ad7834"/></marker></defs>
+<rect width="1200" height="440" rx="20" fill="#f7f9fb"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="34" y="44" font-size="23" font-weight="700" fill="#172c41">From a pose to a scene</text>
+<text x="34" y="70" font-size="14" fill="#627384">Research design · custom adapter integration is in progress</text>
+<g fill="none" stroke="#506475" stroke-width="2.2" marker-end="url(#arrow)">
+<path d="M264 176 H310"/><path d="M830 176 H888"/>
+<path d="M733 110 V138"/><path d="M147 223 V310"/>
+<path d="M264 349 H310"/>
+</g>
+<path d="M555 176 H638" fill="none" stroke="#ad7834" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#pending)"/>
+<text x="596" y="149" text-anchor="middle" font-size="12" fill="#8c6027">to wire</text>
+<rect x="34" y="130" width="230" height="94" rx="12" fill="#e6f4f1" stroke="#a9d2c9"/>
+<text x="54" y="158" font-size="13" fill="#287369">CONDITION</text><text x="54" y="183" font-size="18" font-weight="700" fill="#193b3b">Pose + prop outlines</text><text x="54" y="205" font-size="13" fill="#466964">Supplied skeleton / contour map</text>
+<rect x="310" y="130" width="245" height="94" rx="12" fill="#e8f1fa" stroke="#b1c9e0"/>
+<text x="330" y="158" font-size="13" fill="#3e6489">RESEARCH MODULE</text><text x="330" y="183" font-size="18" font-weight="700" fill="#233d57">Visual Context Adapter</text><text x="330" y="205" font-size="13" fill="#506a83">Conv encoder → feature tokens</text>
+<rect x="640" y="138" width="190" height="78" rx="12" fill="#edf0f6" stroke="#c0cad8"/>
+<text x="735" y="170" text-anchor="middle" font-size="18" font-weight="700" fill="#29394f">FLUX.1 backbone</text><text x="735" y="194" text-anchor="middle" font-size="13" fill="#627184">Base model + denoising</text>
+<rect x="647" y="83" width="176" height="27" rx="13" fill="#e2e8f0"/>
+<text x="735" y="102" text-anchor="middle" font-size="13" fill="#41556e">Text prompt + noise</text>
+<rect x="888" y="138" width="276" height="78" rx="12" fill="#f6eceb" stroke="#dfc7c4"/>
+<text x="1026" y="170" text-anchor="middle" font-size="18" font-weight="700" fill="#60403c">Decode to an anime image</text><text x="1026" y="194" text-anchor="middle" font-size="13" fill="#80645f">Still-image research target</text>
+<rect x="34" y="310" width="230" height="78" rx="12" fill="#eef2f4" stroke="#ccd7df"/>
+<text x="54" y="342" font-size="18" font-weight="700" fill="#344c60">Skeleton mask</text><text x="54" y="366" font-size="13" fill="#627384">Pose and prop regions</text>
+<rect x="310" y="310" width="320" height="78" rx="12" fill="#eef2f4" stroke="#ccd7df"/>
+<text x="330" y="342" font-size="18" font-weight="700" fill="#344c60">Skeleton-weighted MSE</text><text x="330" y="366" font-size="14" fill="#627384">W = 1 + λM · training utility</text>
+<text x="680" y="335" font-size="14" font-weight="700" fill="#576b7c">Implementation note</text><text x="680" y="360" font-size="14" fill="#627384">The adapter and loss modules exist; their end-to-end</text><text x="680" y="381" font-size="14" fill="#627384">training / inference path is not connected yet.</text>
+</g></svg>
